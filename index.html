@@ -38,15 +38,88 @@
             color: #1a1a1a;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
         }
         
+        /* Demo Watermark - Muito sutil */
+        .demo-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 6rem;
+            font-weight: 300;
+            color: rgba(212, 175, 55, 0.015);
+            z-index: 1;
+            pointer-events: none;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+            letter-spacing: 8px;
+        }
+        
+        /* Demo Header - Discreto e fixo */
+        .demo-header {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.95) 0%, rgba(244, 228, 188, 0.95) 100%);
+            color: #1a1a1a;
+            text-align: center;
+            padding: 12px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .demo-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .demo-badge {
+            background: rgba(26, 26, 26, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .demo-text {
+            font-size: 0.9em;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        
+        .demo-cta {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-cta:hover {
+            border-bottom-color: #1a1a1a;
+            opacity: 1;
+        }
+        
+        /* Ajustar container para compensar header fixo */
         .container {
             width: 100vw;
-            margin: 0;
+            margin: 48px 0 0 0;
             padding: 0;
             background: #ffffff;
             position: relative;
             min-height: 100vh;
+            z-index: 2;
         }
         
         .header {
@@ -340,6 +413,186 @@
             opacity: 0.9;
         }
         
+        .footer .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #25d366, #20c55a);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin: 15px 0 5px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .footer .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, #20c55a, #1ea350);
+        }
+        
+        .footer .cta-button:visited {
+            color: white;
+        }
+        
+        /* Demo Footer - Integrado harmoniosamente */
+        .demo-footer {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 35px 20px;
+            position: relative;
+            border-top: 2px solid #d4af37;
+        }
+        
+        .demo-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        }
+        
+        .demo-footer-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .demo-footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .demo-footer .cta-box {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .demo-footer .cta-title {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #f4e4bc;
+            font-weight: 600;
+        }
+        
+        .demo-footer .cta-text {
+            font-size: 1em;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .demo-footer .highlight {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .demo-footer .signature {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        /* Botão Flutuante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        .whatsapp-float:hover {
+            background: #20c55a;
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float:visited {
+            color: white;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+        
+        /* Tooltip do WhatsApp */
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1a1a1a;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #1a1a1a;
+        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+        
         .quality-statement {
             background: linear-gradient(135deg, #f8f8f8, #ffffff);
             padding: 30px;
@@ -364,6 +617,14 @@
         }
         
         @media print {
+            .demo-header, .demo-footer, .demo-watermark, .whatsapp-float {
+                display: none !important;
+            }
+            
+            .container {
+                margin-top: 0 !important;
+            }
+            
             body { background: white; }
             .container { box-shadow: none; }
             .pizza-item:hover, .regular-item:hover, .size-option:hover { transform: none; }
@@ -527,6 +788,46 @@
         }
         
         @media (max-width: 768px) {
+            .demo-watermark {
+                font-size: 3rem;
+            }
+            
+            .demo-content {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .demo-text {
+                font-size: 0.8em;
+            }
+            
+            .container {
+                margin-top: 60px;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .whatsapp-tooltip {
+                font-size: 12px;
+                padding: 6px 10px;
+                right: 65px;
+            }
+            
+            .whatsapp-float:hover .whatsapp-tooltip {
+                right: 70px;
+            }
+            
             .header { padding: 60px 30px; }
             .header h1 { font-size: 3em; }
             .menu-content { padding: 40px 30px; }
@@ -536,6 +837,17 @@
     </style>
 </head>
 <body>
+    <!-- Demo Watermark - Muito sutil -->
+    <div class="demo-watermark">maximiza.AI</div>
+    
+    <!-- Demo Header - Discreto e fixo -->
+    <div class="demo-header">
+        <div class="demo-content">
+            <span class="demo-badge">Demo</span>
+            <span class="demo-text">Criado pela <strong>maximiza.AI</strong> para demonstrar automação com IA • <a href="https://maximiza.ai" target="_blank" class="demo-cta">Saiba mais</a></span>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <div class="header-content">
@@ -957,9 +1269,43 @@
                 <p>📱 WhatsApp: +55 16 98813-5564</p>
                 <p>🚚 Delivery em toda a região</p>
                 <p>⏰ Funcionamento: Ter-Dom • 18h às 23h</p>
+                
+                <a href="https://wa.me/5516988135564?text=%F0%9F%93%B1%20*CARDÁPIO%20ONLINE*%20%7C%20Bella%20Vista%0A%0AOlá!%20Gostaria%20de%20fazer%20um%20pedido%20através%20do%20cardápio%20digital.%20%F0%9F%8D%95%0A%0APoderia%20me%20ajudar%20com%20o%20pedido?" target="_blank" class="cta-button">
+                    📱 Fazer Pedido pelo WhatsApp
+                </a>
+                
                 <p style="margin-top: 20px; font-style: italic; opacity: 0.8;">
                     "Cada prato é uma obra de arte culinária, preparada com ingredientes selecionados e muito amor."
                 </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5516988135564?text=%F0%9F%93%B1%20*CARDÁPIO%20ONLINE*%20%7C%20Bella%20Vista%0A%0AOlá!%20Gostaria%20de%20fazer%20um%20pedido%20através%20do%20cardápio%20digital.%20%F0%9F%8D%95%0A%0APoderia%20me%20ajudar%20com%20o%20pedido?" target="_blank" class="whatsapp-float">
+        <span class="whatsapp-tooltip">Fazer Pedido</span>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
+        </svg>
+    </a>
+    
+    <!-- Demo Footer - Integrado harmoniosamente -->
+    <div class="demo-footer">
+        <div class="demo-footer-content">
+            <h3>🚀 Este é apenas o começo do que a IA pode fazer pelo seu negócio</h3>
+            
+            <div class="cta-box">
+                <div class="cta-title">📈 Quer resultados como estes para sua empresa?</div>
+                <div class="cta-text"><span class="highlight">A maximiza.AI</span> ajuda empreendedores a aplicarem IA prática em seus negócios.</div>
+                <div class="cta-text">De cardápios digitais a automação completa de vendas - transformamos sua operação em uma máquina de resultados.</div>
+            </div>
+            
+            <p>💡 <span class="highlight">Consultoria especializada</span> • Implementação prática • Resultados mensuráveis</p>
+            <p>🎯 <span class="highlight">Foco total</span>: Mais lucro, menos trabalho manual, crescimento escalável</p>
+            
+            <div class="signature">
+                <p><strong>📞 Entre em contato e descubra como a IA pode revolucionar seu negócio</strong></p>
+                <p>Desenvolvido por <span class="highlight">maximiza.AI</span> - Especialistas em IA para Negócios</p>
             </div>
         </div>
     </div>
